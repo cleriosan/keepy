@@ -63,7 +63,7 @@ const Badge: React.FC<{ children: React.ReactNode; className?: string }> = ({ ch
   </span>
 );
 
-const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger' }> = ({ children, className, variant = 'primary', ...props }) => {
+const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: 'primary' | 'secondary' | 'outline' | 'ghost' | 'danger', size?: 'sm' | 'md' | 'lg' }> = ({ children, className, variant = 'primary', size = 'md', ...props }) => {
   const variants = {
     primary: 'bg-indigo-600 text-white hover:bg-indigo-700 shadow-sm',
     secondary: 'bg-slate-200 text-slate-800 hover:bg-slate-300',
@@ -71,8 +71,18 @@ const Button: React.FC<React.ButtonHTMLAttributes<HTMLButtonElement> & { variant
     ghost: 'bg-transparent text-slate-600 hover:bg-slate-100',
     danger: 'bg-rose-500 text-white hover:bg-rose-600'
   };
+
+  const sizes = {
+    sm: 'px-3 py-1.5 text-xs',
+    md: 'px-4 py-2 text-sm',
+    lg: 'px-6 py-3 text-base'
+  };
+
   return (
-    <button className={`px-4 py-2 rounded-lg transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50 ${variants[variant]} ${className}`} {...props}>
+    <button 
+      className={`rounded-lg transition-all active:scale-95 flex items-center justify-center gap-2 disabled:opacity-50 ${variants[variant]} ${sizes[size]} ${className}`} 
+      {...props}
+    >
       {children}
     </button>
   );

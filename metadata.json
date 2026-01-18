@@ -1,5 +1,5 @@
 {
-  "name": "Copy of Lumina Ops - Short-Let Operations",
+  "name": "Lumina Ops - Short-Let Operations",
   "description": "A comprehensive PWA for managing turnover cleanings, linen counts, inventory, and maintenance for short-term rental properties with Tokeet integration.",
   "requestFramePermissions": [
     "camera"
